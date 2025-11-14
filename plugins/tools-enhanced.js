@@ -261,4 +261,113 @@ module.exports = {
                 "Believe you can and you're halfway there.",
                 "The only way to do great work is to love what you do.",
                 "Don't watch the clock; do what it does. Keep going.",
-                "The future depends on what you do today
+                "The future depends on what you do today.",
+                "It always seems impossible until it's done."
+            ];
+            
+            const randomAdvice = advice[Math.floor(Math.random() * advice.length)];
+            
+            await sock.sendMessage(sender, {
+                text: `💡 *Life Advice*\n\n${randomAdvice}\n\n✨ SILA MD`,
+                contextInfo
+            }, { quoted: m });
+
+        } catch (error) {
+            throw new Error(`Advice failed: ${error.message}`);
+        }
+    },
+
+    async getMeme(sock, m, sender, contextInfo) {
+        try {
+            // Placeholder for meme
+            await sock.sendMessage(sender, {
+                text: `🖼️ *Random Meme*\n\n🚧 Meme feature coming soon!\n\nTry image generation with .img command`,
+                contextInfo
+            }, { quoted: m });
+
+        } catch (error) {
+            throw new Error(`Meme failed: ${error.message}`);
+        }
+    },
+
+    async getRiddle(sock, m, sender, contextInfo) {
+        try {
+            const riddles = [
+                { question: "What has keys but can't open locks?", answer: "A piano" },
+                { question: "What has a heart that doesn't beat?", answer: "An artichoke" },
+                { question: "What has a neck but no head?", answer: "A bottle" },
+                { question: "What has an eye but can't see?", answer: "A needle" },
+                { question: "What gets wetter as it dries?", answer: "A towel" }
+            ];
+            
+            const riddle = riddles[Math.floor(Math.random() * riddles.length)];
+            
+            await sock.sendMessage(sender, {
+                text: `🤔 *Riddle Time!*\n\n${riddle.question}\n\n💡 Answer will be revealed in next message...`,
+                contextInfo
+            }, { quoted: m });
+
+            // Send answer after delay
+            setTimeout(async () => {
+                await sock.sendMessage(sender, {
+                    text: `🎯 *Answer:* ${riddle.answer}\n\n✨ SILA MD`,
+                    contextInfo
+                });
+            }, 5000);
+
+        } catch (error) {
+            throw new Error(`Riddle failed: ${error.message}`);
+        }
+    },
+
+    async getTrivia(sock, m, sender, contextInfo) {
+        try {
+            const trivia = [
+                { question: "What is the capital of France?", answer: "Paris" },
+                { question: "How many planets are in our solar system?", answer: "8" },
+                { question: "What is the largest mammal in the world?", answer: "Blue whale" },
+                { question: "What year did World War II end?", answer: "1945" },
+                { question: "What is the chemical symbol for gold?", answer: "Au" }
+            ];
+            
+            const randomTrivia = trivia[Math.floor(Math.random() * trivia.length)];
+            
+            await sock.sendMessage(sender, {
+                text: `🧠 *Trivia Question!*\n\n${randomTrivia.question}\n\n💡 Think carefully...`,
+                contextInfo
+            }, { quoted: m });
+
+            // Send answer after delay
+            setTimeout(async () => {
+                await sock.sendMessage(sender, {
+                    text: `🎯 *Answer:* ${randomTrivia.answer}\n\n✨ SILA MD`,
+                    contextInfo
+                });
+            }, 7000);
+
+        } catch (error) {
+            throw new Error(`Trivia failed: ${error.message}`);
+        }
+    },
+
+    async textToSpeech(sock, m, sender, text, contextInfo) {
+        try {
+            if (!text) {
+                await sock.sendMessage(sender, {
+                    text: '❌ Please provide text\nExample: .tts hello world',
+                    contextInfo
+                }, { quoted: m });
+                return;
+            }
+
+            // Placeholder for TTS
+            await sock.sendMessage(sender, {
+                text: `🔊 Text to Speech: "${text}"\n\n🚧 TTS feature coming soon!`,
+                contextInfo
+            }, { quoted: m });
+
+        } catch (error) {
+            throw new Error(`TTS failed: ${error.message}`);
+        }
+    }
+};
