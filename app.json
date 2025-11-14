@@ -7,7 +7,7 @@
   "env": {
     "SESSION_ID": {
       "description": "Your Mega.nz session ID starting with 'Sila~'",
-      "value": "Sila~your_mega_session_code_here"
+      "value": ""
     },
     "PREFIX": {
       "description": "Bot command prefix",
@@ -15,7 +15,7 @@
     },
     "BOT_NAME": {
       "description": "Your bot name",
-      "value": "SILA-MD-s1"
+      "value": "SILA-MD-s2"
     },
     "OWNER_NUMBER": {
       "description": "Bot owner number",
@@ -24,7 +24,8 @@
   },
   "buildpacks": [
     {
-      "url": "heroku/nodejs"
+      "url": "https://github.com/heroku/heroku-buildpack-nodejs.git"
     }
-  ]
+  ],  
+ "stack": "heroku-24"  
 }
