@@ -8,7 +8,7 @@
     "SESSION_ID": {
       "description": "Your Mega.nz session ID starting with 'Sila~'",
       "value": "Sila~your_mega_session_code_here",
-      "required": false
+      "required": true
     },
     "PREFIX": {
       "description": "Bot command prefix",
