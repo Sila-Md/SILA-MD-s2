@@ -1,7 +1,7 @@
 {
   "name": "sila-md-bot",
   "version": "2.0.0",
-  "description": "Powerful WhatsApp Bot with Multi-Device Support",
+  "description": "SILA MD WhatsApp Bot with Multi-Device Support",
   "main": "sila.js",
   "scripts": {
     "start": "node sila.js",
@@ -21,17 +21,19 @@
     "moment-timezone": "^0.5.43",
     "qrcode-terminal": "^0.12.0",
     "node-cron": "^3.0.2",
-    "g-i-s": "^2.1.6",
     "pdfkit": "^0.14.0",
     "qrcode": "^1.5.3",
     "sharp": "^0.32.6",
-    "translate-google": "^1.5.0"
+    "translate-google": "^1.5.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "ytdl-core": "^4.11.5"
   },
   "keywords": [
     "whatsapp-bot",
     "multi-device",
     "sila-tech",
-    "baileys"
+    "baileys",
+    "heroku"
   ],
   "author": "SILA",
   "license": "MIT"
