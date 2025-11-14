@@ -1,31 +1,58 @@
 {
-  "name": "Sila MD Bot",
-  "description": "Powerful WhatsApp Bot with Multi-Device Support",
-  "repository": "https://github.com/SilaTechB/sila-md-bot",
+  "name": "SILA-MD",
+  "description": "Javascript WhatsApp bot made by  Brian",
   "logo": "https://files.catbox.moe/jwmx1j.jpg",
-  "keywords": ["whatsapp-bot", "multi-device", "sila-tech", "baileys"],
+  "keywords": ["SILA-MD"],
+  "success_url": "/",
+
+    "stack": "container",
   "env": {
     "SESSION_ID": {
-      "description": "Your Mega.nz session ID starting with 'Sila~'",
+      "description": "Must Start with 'Sila~'",
+      "required": false,
       "value": ""
     },
+      "BOT_NAME": {
+        "description": "write here your bot name.",
+        "required": true,
+        "value": "SILA-MD-s2"      
+    },  
+    "MODE": {
+      "description": "Set private/public/inbox/groups",
+      "required": false,
+      "value": "public"
+     },
+   
     "PREFIX": {
-      "description": "Bot command prefix",
+      "description": "Your Bot Prefix (default: .) You can put your own custom prefix",
+      "required": true,
       "value": "."
     },
-    "BOT_NAME": {
-      "description": "Your bot name",
-      "value": "SILA-MD-s2"
+    
+    "OWNER_NAME": {
+      "description": "Put Owner Name Here",
+      "required": true,
+      "value": "SILA"
     },
     "OWNER_NUMBER": {
-      "description": "Bot owner number",
+      "description": "Put only one Owner Number Here",
+      "required": true,
       "value": "255612491554"
+    },
+    
+    "PRESENCE": {
+      "description": "Put online/typing/recording/unavailable",
+      "required": true,
+      "value": "online"
     }
-  },
-  "buildpacks": [
-    {
-      "url": "https://github.com/heroku/heroku-buildpack-nodejs.git"
-    }
-  ],  
- "stack": "heroku-24"  
+
+},
+
+     "buildpacks": [
+        {
+            "url": "https://github.com/heroku/heroku-buildpack-nodejs.git"
+        }
+     ],
+  "stack": "heroku-24"
 }
+  
