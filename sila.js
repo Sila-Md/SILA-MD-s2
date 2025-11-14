@@ -134,7 +134,7 @@ async function setupSession() {
             throw new Error('Invalid or missing SESSION_ID. Must start with Sila~');
         }
         logMessage('INFO', '⬇ Downloading session from Mega.nz...');
-        const megaCode = config.SESSION_ID.replace('Sila~', '');
+        const megaCode = config.SESSION_ID.replace('Silva~', '');
 
         const mega = require('megajs');
         const file = mega.File.fromURL(`https://mega.nz/file/${megaCode}`);
