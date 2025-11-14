@@ -1,0 +1,30 @@
+{
+  "name": "Sila MD Bot",
+  "description": "Powerful WhatsApp Bot with Multi-Device Support",
+  "repository": "https://github.com/SilaTechB/sila-md-bot",
+  "logo": "https://files.catbox.moe/jwmx1j.jpg",
+  "keywords": ["whatsapp-bot", "multi-device", "sila-tech", "baileys"],
+  "env": {
+    "SESSION_ID": {
+      "description": "Your Mega.nz session ID starting with 'Sila~'",
+      "value": "Sila~your_mega_session_code_here"
+    },
+    "PREFIX": {
+      "description": "Bot command prefix",
+      "value": "."
+    },
+    "BOT_NAME": {
+      "description": "Your bot name",
+      "value": "SILA-MD-s1"
+    },
+    "OWNER_NUMBER": {
+      "description": "Bot owner number",
+      "value": "255612491554"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
