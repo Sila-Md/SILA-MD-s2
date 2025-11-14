@@ -7,8 +7,8 @@
   "env": {
     "SESSION_ID": {
       "description": "Your Mega.nz session ID starting with 'Sila~'",
-      "value": "",
-      "required": true
+      "value": "Sila~your_mega_session_code_here",
+      "required": false
     },
     "PREFIX": {
       "description": "Bot command prefix",
@@ -39,6 +39,7 @@
   "formation": {
     "web": {
       "quantity": 1,
+      "size": "eco"
     }
   },
   "stack": "heroku-24"
