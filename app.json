@@ -1,58 +1,45 @@
 {
-  "name": "SILA-MD",
-  "description": "Javascript WhatsApp bot made by  Brian",
+  "name": "SILA MD Bot",
+  "description": "Powerful WhatsApp Bot with Multi-Device Support",
+  "repository": "https://github.com/SilaTechB/sila-md-bot",
   "logo": "https://files.catbox.moe/jwmx1j.jpg",
-  "keywords": ["SILA-MD"],
-  "success_url": "/",
-
-    "stack": "container",
+  "keywords": ["whatsapp-bot", "multi-device", "sila-tech", "baileys", "heroku"],
   "env": {
     "SESSION_ID": {
-      "description": "Must Start with 'Sila~'",
-      "required": false,
-      "value": ""
+      "description": "Your Mega.nz session ID starting with 'Sila~'",
+      "value": "",
+      "required": true
     },
-      "BOT_NAME": {
-        "description": "write here your bot name.",
-        "required": true,
-        "value": "SILA-MD-s2"      
-    },  
-    "MODE": {
-      "description": "Set private/public/inbox/groups",
-      "required": false,
-      "value": "public"
-     },
-   
     "PREFIX": {
-      "description": "Your Bot Prefix (default: .) You can put your own custom prefix",
-      "required": true,
-      "value": "."
+      "description": "Bot command prefix",
+      "value": ".",
+      "required": false
     },
-    
-    "OWNER_NAME": {
-      "description": "Put Owner Name Here",
-      "required": true,
-      "value": "SILA"
+    "BOT_NAME": {
+      "description": "Your bot name",
+      "value": "SILA-MD-s1",
+      "required": false
     },
     "OWNER_NUMBER": {
-      "description": "Put only one Owner Number Here",
-      "required": true,
-      "value": "255612491554"
+      "description": "Bot owner number",
+      "value": "255612491554",
+      "required": false
     },
-    
-    "PRESENCE": {
-      "description": "Put online/typing/recording/unavailable",
-      "required": true,
-      "value": "online"
+    "npm_config_legacy_peer_deps": {
+      "description": "Fix dependency conflicts",
+      "value": "true",
+      "required": true
     }
-
-},
-
-     "buildpacks": [
-        {
-            "url": "https://github.com/heroku/heroku-buildpack-nodejs.git"
-        }
-     ],
+  },
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-nodejs.git"
+    }
+  ],
+  "formation": {
+    "web": {
+      "quantity": 1,
+    }
+  },
   "stack": "heroku-24"
 }
-  
