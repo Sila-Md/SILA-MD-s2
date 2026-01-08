@@ -1,7 +1,7 @@
 const { File: BufferFile } = require('node:buffer');
 global.File = BufferFile;
 
-// ✅ Sila Tech  Property 2025
+// ✅ Sila Tech Property 2025
 const baileys = require('@whiskeysockets/baileys');
 const {
     makeWASocket,
@@ -13,7 +13,6 @@ const {
     isJidBroadcast,
     isJidStatusBroadcast,
     areJidsSameUser,
-    makeInMemoryStore,
     downloadContentFromMessage
 } = baileys;
 
@@ -24,7 +23,9 @@ const express = require('express');
 const P = require('pino');
 const { handleMessages } = require('./handler');
 const config = require('./config.js');
-const store = makeInMemoryStore({ logger: P({ level: 'silent' }) });
+
+// ✅ Ondoa store kwani imebadilishwa katika version mpya ya baileys
+// const store = makeInMemoryStore({ logger: P({ level: 'silent' }) });
 
 const prefix = config.PREFIX || '.';
 const tempDir = path.join(os.tmpdir(), 'sila-cache');
@@ -130,11 +131,11 @@ loadPlugins();
 async function setupSession() {
     const sessionPath = path.join(__dirname, 'sessions', 'creds.json');
     if (!fs.existsSync(sessionPath)) {
-        if (!config.SESSION_ID || !config.SESSION_ID.startsWith('Sila~')) {
-            throw new Error('Invalid or missing SESSION_ID. Must start with Sila~');
+        if (!config.SESSION_ID || !config.SESSION_ID.startsWith('POPKID;;;')) {
+            throw new Error('Invalid or missing SESSION_ID. Must start with POPKID;;;');
         }
         logMessage('INFO', '⬇ Downloading session from Mega.nz...');
-        const megaCode = config.SESSION_ID.replace('Silva~', '');
+        const megaCode = config.SESSION_ID.replace('POPKID;;;', '');
 
         const mega = require('megajs');
         const file = mega.File.fromURL(`https://mega.nz/file/${megaCode}`);
@@ -341,13 +342,6 @@ async function connectToWhatsApp() {
         getMessage: async () => undefined,
         ...cryptoOptions
     });
-
-    // Bind store
-    try {
-        store.bind(sock.ev);
-    } catch (e) {
-        logMessage('WARN', `store.bind failed: ${e.message}`);
-    }
 
     // Connection update handler
     sock.ev.on('connection.update', async update => {
