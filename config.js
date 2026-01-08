@@ -4,12 +4,12 @@ module.exports = {
     BOT_NAME: "SILA-MD-s1",
     OWNER_NAME: "SILA",
     OWNER_NUMBER: "255612491554",
-    DESCRIPTION: "✨ 𝐒𝐈𝐋𝐀 𝐌𝐃 𝐬𝟏 - 𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐁𝐲 𝐒𝐢𝐥𝐚 𝐓𝐞𝐜𝐡 𝐈𝐧𝐜 ✨",
+    DESCRIPTION: "✨ 𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐁𝐲 𝐒𝐢𝐥𝐚 𝐓𝐞𝐜𝐡 ✨",
     
     // Bot Settings
     PREFIX: ".",
     MODE: "public",
-    SESSION_ID: "Sila~your_mega_session_code_here",
+    SESSION_ID: "POPKID;;;jAlQhYIb#2X1oERF_HyzyFLqc01elDpKippMCRTPnB_VMioTDBN8",
     
     // Feature Toggles
     ANTIDELETE_GROUP: true,
@@ -18,16 +18,16 @@ module.exports = {
     ANTI_LINK: true,
     ALWAYS_ONLINE: true,
     GROUP_COMMANDS: true,
-    READ_MESSAGE: true,
+    READ_MESSAGE: false,
     AUTO_STATUS_SEEN: true,
     AUTO_STATUS_REACT: true,
-    AUTO_STATUS_REPLY: true,
+    AUTO_STATUS_REPLY: false,
     AUTO_REACT_NEWSLETTER: true,
     AUTO_REPLY_INBOX: true,
     
     // Status Settings
     Status_Saver: "true",
-    STATUS_REPLY: "true",
+    STATUS_REPLY: "false",
     STATUS_MSG: "SILA MD 💖 SUCCESSFULLY VIEWED YOUR STATUS",
     AUTO_STATUS_MSG: "✨ Nice status! From SILA MD s1",
     
